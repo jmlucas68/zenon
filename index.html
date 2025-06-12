@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenón de Citio - El Fundador del Estoicismo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 1.2em;
+            color: #34495e;
+            line-height: 1.8;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .section:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            }
+
+        h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+            h2::after {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(45deg, #667eea, #764ba2);
+            }
+
+        h3 {
+            font-size: 1.6em;
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            padding-left: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.1em;
+        }
+
+        .quote {
+            background: linear-gradient(135degrees, #f8f9fa, #e9ecef);
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 1.2em;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+            .quote::before {
+                content: '"';
+                font-size: 4em;
+                color: #667eea;
+                position: absolute;
+                top: -10px;
+                left: 20px;
+                opacity: 0.3;
+            }
+
+        .quote-author {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 15px;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background: linear-gradient(to bottom, #667eea, #764ba2);
+            }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+            .timeline-item::before {
+                content: '';
+                position: absolute;
+                left: -37px;
+                top: 25px;
+                width: 12px;
+                height: 12px;
+                background: #667eea;
+                border-radius: 50%;
+                border: 3px solid white;
+            }
+
+        .year {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .work-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+            .work-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
+
+        .work-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .work-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .link-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+            .link-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+                background: linear-gradient(45deg, #764ba2, #667eea);
+            }
+
+        .influences {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .influence-card {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+        }
+
+            .influence-card:hover {
+                border-color: #667eea;
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            }
+
+        .influence-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .influence-relation {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .sources-list {
+            list-style: none;
+            padding: 0;
+        }
+
+            .sources-list li {
+                margin-bottom: 15px;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 10px;
+                border-left: 4px solid #667eea;
+                transition: all 0.3s ease;
+            }
+
+                .sources-list li:hover {
+                    background: #e9ecef;
+                    transform: translateX(5px);
+                }
+
+            .sources-list a {
+                color: #667eea;
+                text-decoration: none;
+                font-weight: bold;
+                transition: color 0.3s ease;
+            }
+
+                .sources-list a:hover {
+                    color: #764ba2;
+                    text-decoration: underline;
+                }
+
+        .philosophy-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .pillar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+            .pillar:hover {
+                transform: translateY(-10px) rotate(2deg);
+            }
+
+            .pillar h4 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .pillar p {
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+
+        footer {
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+
+            .works-grid,
+            .influences,
+            .philosophy-pillars {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator"></div>
+
+    <div class="container">
+        <header>
+            <h1>Zenón de Citio</h1>
+            <p class="subtitle">Fundador del Estoicismo (334-262 a.C.)</p>
+            <p class="intro">
+                Filósofo griego nacido en Citio, Chipre, que revolucionó el pensamiento occidental
+                al fundar la escuela estoica, una de las corrientes filosóficas más influyentes
+                de la antigüedad y que perdura hasta nuestros días.
+            </p>
+        </header>
+
+        <div class="section">
+            <h2>📜 Biografía</h2>
+
+            <p>
+                Zenón de Citio nació hacia el 334 a.C. en la ciudad de Citio, en la isla de Chipre.
+                Provenía de una familia de comerciantes fenicios, lo que le proporcionó una perspectiva
+                cosmopolita que más tarde influiría en su filosofía universal.
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">c. 334 a.C.</div>
+                    <p>Nace en Citio, Chipre, en una familia de comerciantes fenicios.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="year">c. 314 a.C.</div>
+                    <p>Llega a Atenas tras un naufragio que cambió el rumbo de su vida, abandonando el comercio por la filosofía.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="year">c. 300 a.C.</div>
+                    <p>Funda la escuela estoica en el Pórtico Pintado (Stoa Poikile) de Atenas.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="year">c. 262 a.C.</div>
+                    <p>Muere en Atenas, dejando un legado filosófico que perduraría milenios.</p>
+                </div>
+            </div>
+
+            <div class="quote">
+                El objetivo de la vida es vivir de acuerdo con la naturaleza, y esto significa vivir de acuerdo con la virtud, porque la naturaleza nos guía hacia la virtud.
+                <div class="quote-author">— Zenón de Citio</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏛️ Contexto Histórico y Filosófico</h2>
+
+            <p>
+                Zenón vivió en una época de grandes transformaciones. El mundo griego había sido unificado
+                por Alejandro Magno, creando un imperio helenístico que se extendía desde Grecia hasta la India.
+                Tras la muerte de Alejandro en 323 a.C., este vasto territorio se fragmentó, generando
+                incertidumbre política y social.
+            </p>
+
+            <h3>El Mundo Helenístico</h3>
+            <p>
+                La época helenística (323-31 a.C.) se caracterizó por la fusión de culturas griega,
+                oriental y egipcia. Las ciudades-estado griegas perdieron su independencia, y los
+                individuos se sintieron desarraigados de sus comunidades tradicionales. Este contexto
+                favoreció el desarrollo de filosofías que ofrecían guía personal para la vida, como
+                el estoicismo, el epicureísmo y el escepticismo.
+            </p>
+
+            <h3>El Legado de las Escuelas Anteriores</h3>
+            <p>
+                Zenón se formó en un ambiente intelectual rico, influenciado por diversas tradiciones
+                filosóficas. La Academia de Platón y el Liceo de Aristóteles seguían siendo centros
+                de aprendizaje importantes, mientras que las enseñanzas de Sócrates continuaban
+                inspirando a pensadores de diversas corrientes.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>🧠 Pensamiento Filosófico</h2>
+
+            <p>
+                El estoicismo de Zenón se estructuró en tres grandes áreas: la lógica, la física y la ética.
+                Para los estoicos, estas disciplinas estaban interconectadas como las partes de un organismo viviente.
+            </p>
+
+            <div class="philosophy-pillars">
+                <div class="pillar">
+                    <h4>🔍 Lógica</h4>
+                    <p>
+                        La lógica estoica incluía no solo el razonamiento formal, sino también
+                        la teoría del conocimiento. Zenón desarrolló la teoría de las "representaciones
+                        catalépticas" - impresiones tan claras y distintas que compelen al asentimiento.
+                    </p>
+                </div>
+
+                <div class="pillar">
+                    <h4>🌌 Física</h4>
+                    <p>
+                        Los estoicos concebían el universo como un organismo viviente, racional y divino.
+                        Todo está interconectado por el logos (razón universal), y los eventos siguen
+                        un orden necesario y providencial.
+                    </p>
+                </div>
+
+                <div class="pillar">
+                    <h4>⚖️ Ética</h4>
+                    <p>
+                        La ética era el fin último de la filosofía estoica. El bien supremo es la virtud,
+                        que consiste en vivir de acuerdo con la naturaleza racional. La sabiduría,
+                        justicia, coraje y templanza son las cuatro virtudes cardinales.
+                    </p>
+                </div>
+            </div>
+
+            <div class="quote">
+                No somos perturbados por las cosas que nos suceden, sino por las opiniones que tenemos sobre las cosas que nos suceden.
+                <div class="quote-author">— Principio estoico atribuido a Zenón</div>
+            </div>
+
+            <h3>Conceptos Fundamentales</h3>
+
+            <p>
+                <strong>Apatheia:</strong> No la ausencia de emociones, sino la ausencia de pasiones
+                destructivas. El sabio estoico experimenta "eupatheiai" (emociones buenas) como la alegría,
+                la cautela y la voluntad.
+            </p>
+
+            <p>
+                <strong>Prohairesis:</strong> La capacidad de elección moral, lo único que está
+                completamente bajo nuestro control. Es nuestra facultad de juicio y decisión.
+            </p>
+
+            <p>
+                <strong>Kosmopolitês:</strong> Ciudadano del mundo. Todos los seres racionales
+                forman parte de una comunidad universal regida por la razón.
+            </p>
+
+            <div class="quote">
+                El hombre sabio es aquel que no se deja perturbar por nada externo, y encuentra la felicidad en la virtud y en la conformidad con la naturaleza.
+                <div class="quote-author">— Zenón de Citio</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📚 Principales Obras</h2>
+
+            <p>
+                Lamentablemente, ninguna de las obras de Zenón ha llegado completa hasta nosotros.
+                Solo conocemos sus ideas a través de fragmentos y testimonios de autores posteriores.
+                Las fuentes principales incluyen a Diógenes Laercio, Sexto Empírico, y Estobeo.
+            </p>
+
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-title">La República</div>
+                    <div class="work-description">
+                        Obra utópica que proponía una sociedad ideal basada en principios estoicos,
+                        sin templos, tribunales ni gimnasios separados para hombres y mujeres.
+                    </div>
+                    <div class="links">
+                        <a href="https://es.wikipedia.org/wiki/Rep%C3%BAblica_(Zen%C3%B3n_de_Citio)" class="link-btn" target="_blank">Wikipedia</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-title">Sobre la Vida según la Naturaleza</div>
+                    <div class="work-description">
+                        Tratado ético que exponía los principios fundamentales de la moral estoica
+                        y la idea de vivir conforme a la naturaleza racional.
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-title">Sobre las Emociones</div>
+                    <div class="work-description">
+                        Análisis de las pasiones humanas y cómo la filosofía puede ayudar a
+                        alcanzar la tranquilidad del alma (ataraxia).
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-title">Fuentes Modernas sobre Zenón</div>
+                    <div class="work-description">
+                        Compilaciones y estudios modernos sobre la filosofía de Zenón y el estoicismo temprano.
+                    </div>
+                    <div class="links">
+                        <a href="https://www.amazon.es/s?k=zenon+citio+estoicismo" class="link-btn" target="_blank">Amazon ES</a>
+                        <a href="https://archive.org/search.php?query=stoicism%20zeno&language=spa" class="link-btn" target="_blank">Archive.org</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌟 Influencias Recibidas y Ejercidas</h2>
+
+            <h3>Influencias Recibidas</h3>
+            <div class="influences">
+                <div class="influence-card">
+                    <div class="influence-name">Crates de Tebas</div>
+                    <div class="influence-relation">Maestro Cínico</div>
+                    <p>Le enseñó la importancia de la virtud sobre los bienes materiales y la autosuficiencia moral.</p>
+                </div>
+
+                <div class="influence-card">
+                    <div class="influence-name">Estilpón de Megara</div>
+                    <div class="influence-relation">Filósofo Megárico</div>
+                    <p>Influyó en su desarrollo de la lógica y la teoría del conocimiento estoica.</p>
+                </div>
+
+                <div class="influence-card">
+                    <div class="influence-name">Jenócrates</div>
+                    <div class="influence-relation">Académico</div>
+                    <p>De la Academia platónica, contribuyó a su comprensión de la estructura sistemática de la filosofía.</p>
+                </div>
+
+                <div class="influence-card">
+                    <div class="influence-name">Heráclito</div>
+                    <div class="influence-relation">Presocrático</div>
+                    <p>Su concepto del logos como razón universal fue fundamental para la física estoica.</p>
+                </div>
+            </div>
+
+            <h3>Influencias Ejercidas</h3>
+            <div class="influences">
+                <div class="influence-card">
+                    <div class="influence-name">Cleantes de Asos</div>
+                    <div class="influence-relation">Sucesor Directo</div>
+                    <p>Segundo escolarca de la Estoa, desarrolló especialmente la teología estoica.</p>
+                </div>
+
+                <div class="influence-card">
+                    <div class="influence-name">Crisipo de Solos</div>
+                    <div class="influence-relation">Sistematizador</div>
+                    <p>Tercer escolarca, sistematizó y desarrolló la lógica estoica hasta su forma madura.</p>
+                </div>
+
+                <div class="influence-card">
+                    <div class="influence-name">Marco Aurelio</div>
+                    <div class="influence-relation">Emperador-Filósofo</div>
+                    <p>Sus "Meditaciones" reflejan la práctica estoica en el poder político.</p>
+                </div>
+
+                <div class="influence-card">
+                    <div class="influence-name">Epicteto</div>
+                    <div class="influence-relation">Estoico Romano</div>
+                    <p>Desarrolló la ética estoica práctica, especialmente el concepto de prohairesis.</p>
+                </div>
+            </div>
+
+            <div class="quote">
+                La filosofía es como un campo fértil: la lógica es la cerca que lo protege, la física es el suelo, y la ética es el fruto que produce.
+                <div class="quote-author">— Metáfora estoica atribuida a Zenón</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌍 Legado y Relevancia Contemporánea</h2>
+
+            <p>
+                El estoicismo fundado por Zenón ha experimentado un notable renacimiento en el siglo XXI.
+                Sus principios han encontrado aplicación en campos tan diversos como la psicología cognitiva,
+                el liderazgo empresarial y el desarrollo personal.
+            </p>
+
+            <h3>Conexiones con la Psicología Moderna</h3>
+            <p>
+                La Terapia Cognitivo-Conductual (TCC) comparte muchos principios con el estoicismo,
+                especialmente la idea de que nuestras interpretaciones de los eventos, más que los
+                eventos mismos, determinan nuestras respuestas emocionales. Aaron Beck y Albert Ellis,
+                pioneros de la TCC, reconocieron explícitamente su deuda con los filósofos estoicos.
+            </p>
+
+            <h3>Influencia en el Pensamiento Occidental</h3>
+            <p>
+                El estoicismo influyó profundamente en el cristianismo primitivo, especialmente en
+                figuras como San Pablo y los Padres de la Iglesia. Conceptos como la providencia
+                divina, la fraternidad universal y la importancia de la vida interior tienen
+                raíces estoicas.
+            </p>
+
+            <div class="quote">
+                No podemos dirigir el viento, pero podemos ajustar las velas.
+                <div class="quote-author">— Proverbio inspirado en la sabiduría estoica</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔗 Referencias y Fuentes</h2>
+
+            <h3>Fuentes Académicas</h3>
+            <ul class="sources-list">
+                <li>
+                    <a href="https://www.academia.edu/search?q=zenon%20citio%20estoicismo" target="_blank">
+                        Academia.edu - Artículos sobre Zenón de Citio
+                    </a>
+                    <p>Colección de artículos académicos sobre la filosofía estoica y su fundador.</p>
+                </li>
+
+                <li>
+                    <a href="https://es.wikipedia.org/wiki/Zen%C3%B3n_de_Citio" target="_blank">
+                        Wikipedia - Zenón de Citio
+                    </a>
+                    <p>Artículo enciclopédico completo sobre la vida y obra del filósofo.</p>
+                </li>
+
+                <li>
+                    <a href="https://plato.stanford.edu/entries/stoicism/" target="_blank">
+                        Stanford Encyclopedia of Philosophy - Stoicism
+                    </a>
+                    <p>Entrada académica autorizada sobre el estoicismo (en inglés).</p>
+                </li>
+            </ul>
+
+            <h3>Fuentes Textuales Clásicas</h3>
+            <ul class="sources-list">
+                <li>
+                    <a href="https://archive.org/search.php?query=diogenes%20laercio" target="_blank">
+                        Diógenes Laercio - Vidas de los Filósofos Ilustres
+                    </a>
+                    <p>Fuente principal para la biografía de Zenón (Libro VII).</p>
+                </li>
+
+                <li>
+                    <a href="https://www.amazon.es/s?k=fragmentos+estoicos+zenon" target="_blank">
+                        Amazon ES - Fragmentos Estoicos
+                    </a>
+                    <p>Compilaciones modernas de los fragmentos preservados de Zenón.</p>
+                </li>
+            </ul>
+
+            <h3>Estudios Modernos</h3>
+            <ul class="sources-list">
+                <li>
+                    <a href="https://www.amazon.es/Historia-filosofía-estoica-José-García/dp/8437640649" target="_blank">
+                        "Historia de la Filosofía Estoica" - José García López
+                    </a>
+                    <p>Estudio comprensivo del desarrollo histórico del estoicismo.</p>
+                </li>
+
+                <li>
+                    <a href="https://dialnet.unirioja.es/servlet/busquedadoc?t=estoicismo&db=2" target="_blank">
+                        Dialnet - Artículos sobre Estoicismo
+                    </a>
+                    <p>Base de datos académica con numerosos artículos sobre filosofía estoica.</p>
+                </li>
+            </ul>
+
+            <h3>Recursos Digitales</h
