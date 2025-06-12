@@ -1,0 +1,18 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/slnx.sqlite
+/.vs/zenon/CopilotIndices/17.14.734.62261/CodeChunks.db
+/.vs/zenon/CopilotIndices/17.14.734.62261/CodeChunks.db-shm
+/.vs/zenon/CopilotIndices/17.14.734.62261/CodeChunks.db-wal
+/.vs/zenon/CopilotIndices/17.14.734.62261/SemanticSymbols.db
+/.vs/zenon/CopilotIndices/17.14.734.62261/SemanticSymbols.db-shm
+/.vs/zenon/CopilotIndices/17.14.734.62261/SemanticSymbols.db-wal
+*.vsidx
+/.vs/VSWorkspaceState.json
+/.vs/zenon/config/applicationhost.config
+/.vs/zenon/v17/.wsuo
+/.vs/zenon/v17/DocumentLayout.json
+/.vs/zenon/v17/DocumentLayout.backup.json
+*.sqlite-journal
